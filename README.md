@@ -1,4 +1,4 @@
-I've made a GitHub repo that reproduces the example: https://github.com/jgale/MapOptionaliOS14Bug. I've also attached a .zip here and a screen recording of the bug, and pasted the code inline. I've filed a bug with Apple: FB8196917
+I've filed a bug with Apple: FB8196917
 
 # Steps to Reproduce
 
