@@ -8,9 +8,36 @@
 
 import SwiftUI
 
+struct Object: Identifiable {
+    var id: String
+}
+
 struct ContentView: View {
+    @State var objects = [
+        Object(id: "1"),
+        Object(id: "2"),
+        Object(id: "3"),
+        Object(id: "4"),
+        Object(id: "5")
+    ]
+    @State var tappedObject: Object?
+    @State var showSheet = false
+                
     var body: some View {
-        Text("Hello, World!")
+        List {
+            ForEach(objects) { object in
+                Text(object.id)
+                    .onTapGesture {
+                        self.tappedObject = object
+                        self.showSheet = true
+                    }
+            }
+            .sheet(isPresented: self.$showSheet) {
+                self.tappedObject.map {
+                    Text($0.id)
+                }
+            }
+        }
     }
 }
 
